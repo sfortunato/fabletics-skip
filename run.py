@@ -2,6 +2,8 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
+from credentials import username, password
+
 
 def get_profile():
     profile = FirefoxProfile()

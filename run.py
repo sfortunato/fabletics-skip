@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+from selenium.webdriver.firefox.options import Options 
 
-from credentials import username, password
+from .credentials import username, password
 
 
 def get_profile():
@@ -18,6 +19,8 @@ def get_profile():
 
 def run():
     profile = get_profile()
+    options = Options()
+    options.add_argument("--headless")
     driver = webdriver.Firefox(profile)
     driver.implicitly_wait(30)
 
@@ -37,3 +40,7 @@ def run():
 if __name__ == '__main__':
     run()
 
+
+
+# driver.find_element_by_id("name of id").click()
+# driver.get("url")

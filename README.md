@@ -11,10 +11,10 @@ script to log into fabletics and skip the month so you don't get charged
 - Before you begin, ensure you have a preferred virtual environment (venv, pyenv) and python3 available
 - set up virtual env
 - from your virtual environment, inside your repo, run:
-``` pip install -r requirements.txt ```
+` pip install -r requirements.txt `
 - create credentials file
 
 
 ## Running the Script
-- 
+- `./run.py`
 

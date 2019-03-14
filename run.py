@@ -21,11 +21,11 @@ def get_profile():
 def run():
     profile = get_profile()
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     driver = webdriver.Firefox(firefox_profile=profile, options=options)
     driver.implicitly_wait(30)
 
-    link = "https://www.fabletics.com/login"
+    link = "https://www.fabletics.com/index.cfm?action=home.login"
     driver.get(link)
     driver.implicitly_wait(30)
 
@@ -34,7 +34,8 @@ def run():
     # Enter password
     driver.find_element_by_id("verification_data").send_keys(password)
     # Click login button
-    driver.findElement(By.linkText("Sign In"))
+    # driver.findElement(By.linkText("Sign In"))
+    driver.find_element_by_id("submitSignIn").click()
     driver.implicitly_wait(30)
 
     html = driver.page_source()
@@ -60,4 +61,13 @@ if __name__ == '__main__':
 
 # driver.findElement(By.linkText("Log in")):
 
+'''
+Modal: button to x-out of modal id = 'cboxClose' --> may vary significantlly
+'sign in' find by link text 'Sign In'
+alt: just go straight to https://www.fabletics.com/index.cfm?action=home.login
+
+Alternate URL to login login, skip modal: https://www.fabletics.com/index.cfm?action=home.login 
+
+
+'''
 
